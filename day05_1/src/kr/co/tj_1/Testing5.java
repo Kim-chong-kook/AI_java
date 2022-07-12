@@ -12,8 +12,7 @@ public class Testing5 {
 			if(num%2==0) {
 				cnt++;
 			}
-			
 		}
-		System.out.printf("입력 받은 짝수는 %d 개입니다.",cnt);
+		System.out.printf("입력 받은 짝수는 %d개입니다.",cnt);
 	}
 }

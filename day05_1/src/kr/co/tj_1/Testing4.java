@@ -15,6 +15,7 @@ public class Testing4 {
 			
 		}
 		System.out.println(sum);
+		//System.out.printf("%d\n",sum);
 		
 	}
 

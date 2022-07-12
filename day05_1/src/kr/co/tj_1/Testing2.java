@@ -6,6 +6,7 @@ public class Testing2 {
 		char alpha = 0;
 		for(alpha='A';alpha<='Z';alpha++) {
 			System.out.print(alpha);
+			//System.out.printf("%c",alpha); // %c는 char을 의미함.
 		}
 	}
 

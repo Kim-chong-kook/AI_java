@@ -7,11 +7,12 @@ public class Testing1 {
 	public static void main(String[] args) {
 		int cnt=0;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("10이하의 정수를 입력");
+		System.out.println("문장을 찍을 10이하의 정수를 입력");
 		cnt = scan.nextInt();
 		for(int i=1;i<=cnt;i++) {
-			System.out.println("Java언어 프로그래밍");
+			System.out.println("Java 언어 프로그래밍");
 		}
 	}
 
 }
+
