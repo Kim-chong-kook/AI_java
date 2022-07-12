@@ -1,0 +1,9 @@
+package day02_test;
+
+public class test7 {
+	public static void main(String[] args) {
+		int a=3; int b = 5;
+		System.out.printf("%d + %d = %d \n",a,b,a+b);
+		System.out.printf("%d * %d = %d \n",a,b,a*b);
+	}
+}

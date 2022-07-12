@@ -1,0 +1,40 @@
+package day03;
+
+import java.util.Scanner;
+
+public class Test8 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int menu=0;
+		System.out.println("메뉴선택. 1.자장면. 2.짬뽕. 3.탕수육");
+		menu=scan.nextInt();
+		if (menu==1) {
+			System.out.println("짜장면선택");
+		}
+		else if(menu==2) {
+			System.out.println("짬뽕선택");
+		}
+		else if(menu==3) {
+			System.out.println("탕수육선택");
+		}
+		else {
+			System.out.println("1,2,3번중에 선택해주세요");
+		}
+		
+		int menuT='n'; // 한문자는 처리되는 과정
+		System.out.println("메뉴선택. A.자장면. B.짬뽕. C.탕수육");
+		menuT=scan.next().charAt(0);
+		if (menuT=='A' || menuT=='a') {
+			System.out.println("짜장면선택");
+		}
+		else if(menuT=='B') {
+			System.out.println("짬뽕선택");
+		}
+		else if(menuT=='C') {
+			System.out.println("탕수육선택");
+		}
+		else {
+			System.out.println("A,B,C번중에 선택해주세요");
+		}
+	}
+}

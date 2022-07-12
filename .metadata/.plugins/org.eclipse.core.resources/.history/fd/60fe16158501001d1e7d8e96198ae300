@@ -1,0 +1,29 @@
+package kr.co.tj;
+
+public class testing1 {
+
+	public static void main(String[] args) {
+		char a = 0;
+		for(char i=0;i<'z';i++) {
+			a = (char) i; 
+			if (i >= 'A') {
+				System.out.print(i);
+			if (i == 'Z') {
+				break;
+			}
+			
+				
+			}
+			
+		}
+		
+		// 표준안
+		char alpha = 'A'; //시작값
+		while(alpha<='Z') {
+			System.out.printf("%c",alpha);
+			alpha++; // 증가값
+		}
+	}
+
+}
+

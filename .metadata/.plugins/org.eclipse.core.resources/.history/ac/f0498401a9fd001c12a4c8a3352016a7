@@ -1,0 +1,14 @@
+package day02_test;
+
+public class test3 {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		System.out.printf("%d + %d = %d", a,b,a+b);
+		System.out.println();
+		a = 30;
+		b = 40;
+		System.out.printf("30 + 40 = %d", a+b);
+	}
+}
+

@@ -1,0 +1,11 @@
+package kr.co.tj;
+
+public class Test1 {
+	public static void main(String[] args) {
+		float silsu1 = 2.0f;
+		float silsu2 = 1.1f;
+		float result = silsu1 - silsu2;
+		System.out.println("계산결과=" + result);
+	}
+}
+

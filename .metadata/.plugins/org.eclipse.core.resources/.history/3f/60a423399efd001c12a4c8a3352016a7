@@ -1,0 +1,11 @@
+package kr.co.tj;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.printf("출력=%d",10);
+		int a = 10;
+		int b = A
+		System.out.printf("출력a=%d", a);
+		System.out.println("출력b=%d", b);
+	}
+}

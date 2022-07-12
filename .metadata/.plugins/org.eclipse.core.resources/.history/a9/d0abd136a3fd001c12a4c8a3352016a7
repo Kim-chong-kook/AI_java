@@ -1,0 +1,11 @@
+package day02_test;
+
+public class test2 {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		System.out.printf("%d", b);
+		System.out.println();
+		System.out.printf("%d", a);
+}
+}

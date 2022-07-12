@@ -1,0 +1,21 @@
+package day03;
+
+public class BitTest {
+
+	public static void main(String[] args) {
+		int num1 = 5;  	// 00000101 2비트로
+		int num2 = 10; 	// 00001010 2비트로
+				
+		System.out.println(num1 | num2); // 비트 논리합
+		System.out.println(num1 & num2); // 비트 논리곱 : 모두 만족하는 것.
+		System.out.println(num1 ^ num2); // XOR
+		System.out.println(~num1); // NOT
+		
+		System.out.println(num1 << 2);
+		System.out.println(num1);
+		System.out.println(num1 <<= 2);
+		System.out.println(num1);
+
+	}
+
+}

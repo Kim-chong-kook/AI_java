@@ -1,0 +1,23 @@
+package kr.co.tj;
+
+public class VariableTest {
+	public static void main(String[] args) {
+		int age,count=0;
+		age=10;
+		
+		int level =10000;
+		System.out.println(age);
+		System.out.println(level); // syso 찍고 컨트롤 스페이스바 : 완성
+		System.out.println(count); // 초기화 하지 않으면, 에러
+		age=20;
+		System.out.println(age);
+		System.out.println();
+		
+		// <<변수명>>
+		// $, _.. 맨앞 변수중에 첫글자가능한 특수문자. 그러나 가독성이 떨어진다.
+		// 123... 맨앞 숫자는 사용불가
+		// 예약어, int while, int for, 사용불가.
+		int numberOfStudent // 의미가 통하는 말로 만든다. 
+		
+	}
+}

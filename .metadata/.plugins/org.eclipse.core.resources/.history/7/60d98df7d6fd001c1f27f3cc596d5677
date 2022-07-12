@@ -1,0 +1,23 @@
+package day02_test;
+
+import java.util.Scanner;
+
+public class Test11 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int a=0,b=0; 
+		int plus=0,minus=0;
+		double div=0,rest=0;
+		System.out.println("두개의 수를 입력하시오.");
+		a = scan.nextInt();
+		b = scan.nextInt();
+		
+		plus = a + b;
+		div = a / b;
+		System.out.printf("%d + %d = %d \n",a,b,plus);
+		System.out.printf("%d / %d = %d \n",a,b,div);
+	}
+
+}

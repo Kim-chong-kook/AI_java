@@ -1,0 +1,41 @@
+package day03;
+
+import java.util.Scanner;
+
+public class Test9 {
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int age = 12; // 숫자로 입력할때
+		int charge = 0;
+		char menu = 'n';
+		char select1='n';
+		
+		String select2=null;
+		
+		System.out.println("메뉴선택 a.중식.b.기타");
+		select1 = scan.next().charAt(0); // 문자하나 받을때
+
+		if(select1=='A' ||select1=='a'){
+			System.out.println("짜장선택");
+			System.out.println("추가 주문을 하세요. yes.짜장곱배기 보통.두그릇");
+			select2 = scan.next(); // 단어를 받을때.
+			if(select2.equals("YES")||select2.equals("yes")){ // 단어받을때
+				System.out.println("곱배기신청");
+			}
+		}
+		
+		
+		
+		else if (age < 14){
+			charge = 2000;
+			System.out.println("초등학생 입니다.");
+		}
+		else if (age < 20){
+			charge = 2500;
+			System.out.println("중, 고등학생 입니다.");
+		}
+
+	}
+}

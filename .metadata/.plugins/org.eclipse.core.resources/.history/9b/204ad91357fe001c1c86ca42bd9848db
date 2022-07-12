@@ -1,0 +1,25 @@
+package day02_test;
+
+import java.util.Scanner;
+
+public class Test10 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int a=0;
+		double b=0.0; 
+		int plus=0,minus=0;
+		double div=0.0;
+		int rest=0;
+		System.out.println("두개의 수를 입력하시오.");
+		a = scan.nextInt();
+		b = scan.nextDouble();
+		
+		//plus = a + b;
+		div = a / b;
+		//System.out.printf("%d + %d = %d \n",a,b,plus);
+		System.out.printf("%d / %.1f = %.8f \n",a,b,div);
+	}
+
+}

@@ -1,0 +1,9 @@
+package day02_test;
+
+public class test3 {
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		System.out.printf("10 + 20 = %d", a+b);
+}
+}

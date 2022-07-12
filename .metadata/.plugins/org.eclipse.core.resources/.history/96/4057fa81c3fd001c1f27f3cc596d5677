@@ -1,0 +1,15 @@
+package kr.co.tj;
+
+public class ConstantTest {
+	public static void main(String[] args) {
+		final int MAX_NUM = 100; // 상수는 all 대문자로 표현,
+		final int MIN_NUM; // 클래스, 메소드에도 final이 붙는다.
+		
+		MIN_NUM = 0;
+		
+		System.out.println(MAX_NUM);
+		System.out.println(MIN_NUM);
+		
+		MAX_NUM = 1000;
+	}
+}

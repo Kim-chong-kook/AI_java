@@ -1,0 +1,21 @@
+package kr.co.tj;
+
+public class testing {
+
+	public static void main(String[] args) {
+		char a = 0;
+		for(int i=65;i<100;i++) {
+			a = (char) i; 
+			if (a >= 'A') {
+				System.out.print(a);
+			}
+			
+			if (a == 'Z') {
+				break;
+				
+			}
+			
+		}
+	}
+
+}
