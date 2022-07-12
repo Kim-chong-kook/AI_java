@@ -1,9 +1,0 @@
-package day02_test;
-
-public class test5 {
-	public static void main(String[] args) {
-		double x = 1.2340;
-		double y = 10.3459;
-		System.out.printf("x = %.4f %n",x);
-	}
-}

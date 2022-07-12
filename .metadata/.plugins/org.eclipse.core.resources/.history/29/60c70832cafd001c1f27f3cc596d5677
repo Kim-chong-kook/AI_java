@@ -1,9 +1,0 @@
-package kr.co.tj;
-
-public class CastingTest {
-	public static void main(String[] args) {
-		byte bNum = 10;
-		int iNum = bNum;
-		System.out.println(bNum);
-	}
-}
