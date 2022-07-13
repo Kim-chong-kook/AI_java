@@ -2,3 +2,11 @@
 .metadata
 .metadata
 .metadata
+.metadata
+*.log
+.metadata/.plugins/org.eclipse.e4.workbench
+*.log
+.metadata
+.metadata/.plugins
+.metadata
+.metadata
