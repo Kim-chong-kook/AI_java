@@ -5,19 +5,20 @@ public class StudentTest_작성된_클래스_시험 { // @@ 객체(Object, 메�
 	// @@ 객체는 다른타입의 자료형으로도 만들 수 있다.
 	public static void main(String[] args) {
 		
-		Student studentLee = new Student(); // 메모리 할당.
+		Student studentLee = new Student(); // 메모리 할당 : // 스택(주소값)과 힙(실재 변수자료)에 상주한다.
 		// @@ class명. 하면 가지고 있는 객체의 종류가 나온다.
-		studentLee.studentName = "이순신";
+		studentLee.studentName = "이순신"; 
 		studentLee.address = "서울";
 		studentLee.showStrudentInfo();
 		
-		Student studentKim = new Student();
+		Student studentKim = new Student(); // 메모리 할당 : // 스택(주소값)과 힙(실재 변수자료)에 상주한다.
 		studentKim.studentName = "김유신";
 		studentKim.address = "경주";
 		studentKim.showStrudentInfo();
 		
-		System.out.println(studentLee); // 객체 정보 출력 : 4byte, 16진수 주소
-		System.out.println(studentKim);
+		System.out.println(studentLee); // 객체 정보 출력 : 스택의 4byte, 16진수 주소
+		System.out.println(studentKim); // 객체 정보 출력 : 4byte, 16진수 주소
+		
 	}
 }
 // @@@@@@@@@@@ 용어정리 @@@@@@@@@@@@@
