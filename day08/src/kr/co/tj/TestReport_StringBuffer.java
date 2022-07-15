@@ -22,7 +22,7 @@ class MakeReport{ // ★ StringBuffer = 자체내장 class 함수 = String 보�
 	private void makeFooter() {
 		buffer.append(line);
 	}
-	public String getReport() { // 비공개된 정보를 String return
+	public String getReport() { // 비공개된 정보를 꺼내기 위해 String return.
 		makeHeader(); // 각기 실행해서 buffer를 꺼내 쓴다.
 		generateBody();
 		makeFooter();
