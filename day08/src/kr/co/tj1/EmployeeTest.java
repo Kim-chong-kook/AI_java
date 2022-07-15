@@ -1,5 +1,9 @@
 package kr.co.tj1;
 
+
+// 사원번호 조회는 DB로 저장해놔야만 가능함.
+// 여기는 중복되지 않는 사원번호 부여하기 실습임.
+
 class Employee{
 	public static int serialNum; // C적인 문법
 	static { // 선언 및 초기화		// 자바적 문법
@@ -49,6 +53,9 @@ public class EmployeeTest {
 		
 		System.out.println(employeeKim.serialNum); // 공유된 static 변수여서 현재는 공통 값.
 		System.out.println(employeeLee.serialNum); // 공유된 static 변수여서 현재는 공통 값.
+		
+		System.out.println(employeeLee.getEmployeeName()+","+employeeLee.getEmployeeId());
+		System.out.println(employeeKim.getEmployeeName()+","+employeeKim.getEmployeeId());
 		
 		/*System.out.println(employeeLee.getEmployeeName()+","+employeeLee.getEmployeeId());
 		System.out.println(employeeKim.getEmployeeName()+","+employeeKim.getEmployeeId());
