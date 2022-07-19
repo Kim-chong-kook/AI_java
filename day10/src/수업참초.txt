@@ -1,0 +1,36 @@
+========================================
+@ 스트링.포맷
+return String.format("성=%s\n이름=%s\n", this.getLastName(),getFirstName());
+
+@ API 참조
+@@ ArrayList
+file:///D:/DEVELOP/jdk-11.0.15.1_doc-all/docs/api/java.base/java/util/ArrayList.html#method.summary
+
+ArrayListTest
+
+@ 객체의 배열 컬렉션 : Set, List, Queue, Map이 있다.
+array1.add("A")
+array1.get(Index)
+array1.remove(2); // 지우고 나면 자동으로 한칸씩 앞당겨 진다. 끝에는 null이 채워진다.
+
+속도 : 중간에 존재하는 데이터를 삭제할 경우에는 ArrayList보다는 LinkedList를 사용하는 것이 효과적이다. 
+
+@제네릭
+
+ArrayHashMapTest
+
+@Map 인터페이스
+해시맵에선 키는 중복이 불가 / 값은 중복가능.
+해시기능은 게시판만들때 , id, pw를 사용함.
+
+Array List와 해쉬맵을 결합해서 사용한다.
+ArrayList<HashMap<String,String>> boardList = new ArrayList<HashMap<String,String>>();
+
+@캡슐, 다형성, 추상화, 상속
+추상화 : 클래스 만들기 
+
+@삭제 메소드
+boardList.remove(i)
+
+@@ 게시판 참조 페이지
+https://velog.io/@gksmf6699/%EA%B8%B0%EC%B4%88JAVA-22%EA%B0%95-%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0
