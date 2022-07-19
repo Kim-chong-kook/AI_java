@@ -1,5 +1,6 @@
 package kr.co.tj4;
 
+
 public class ObjectCopy {
 
 	public static void main(String[] args) {
@@ -12,7 +13,8 @@ public class ObjectCopy {
 		library[3] = new Book("태백산맥4","조정래");
 		library[4] = new Book("태백산맥5","조정래");
 		
-		System.arraycopy(library, 0, copyLibrary, 0, 5); 
+		//System.arraycopy(library, 0, copyLibrary, 0, 5); 
+		copyLibrary = library.clone();
 		// ★★★★★★ 5개 깊은 복사해도 메모리 같아서 얕은 복사됨.....
 		// 원인은 같은 객체 생성방식을 통했기 때문임.
 		
@@ -44,9 +46,11 @@ public class ObjectCopy {
 		copyLibrary[2] = new Book("나목3","박완서");
 		copyLibrary[3] = new Book("나목4","박완서");
 		copyLibrary[4] = new Book("나목5","박완서");
-			
 		
-
+		System.out.println("==========객체를 별도로 넣기============");	
+		for(Book book:copyLibrary) {
+			book.showBookInfo();
+		}
 	}
 
 }

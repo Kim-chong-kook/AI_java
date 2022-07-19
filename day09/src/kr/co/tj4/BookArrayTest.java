@@ -1,5 +1,6 @@
 package kr.co.tj4;
 
+
 class Book{
 	private String title;
 	private String author;
