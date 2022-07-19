@@ -1,5 +1,11 @@
 package kr.co.tj4;
 
+/** 객체 배열의 깊은 복사는 for 문을 이용하거나 값을 직접넣어준다.
+ * 
+ * @author TJ
+ *
+ */
+
 public class ObjectCopy {
 
 	public static void main(String[] args) {
@@ -12,7 +18,8 @@ public class ObjectCopy {
 		library[3] = new Book("태백산맥4","조정래");
 		library[4] = new Book("태백산맥5","조정래");
 		
-		System.arraycopy(library, 0, copyLibrary, 0, 5); 
+		//System.arraycopy(library, 0, copyLibrary, 0, 5); // 방을 새로 만든다.
+		copyLibrary = library.clone();
 		// ★★★★★★ 5개 깊은 복사해도 메모리 같아서 얕은 복사됨.....
 		// 원인은 같은 객체 생성방식을 통했기 때문임.
 		
@@ -22,7 +29,7 @@ public class ObjectCopy {
 		}
 		library[2].setTitle("나목");
 		library[2].setAuthor("박완서");
-		System.out.println("==========변경내용============");
+		System.out.println("==========복사본 변경내용============");
 		for(Book book:copyLibrary) {
 			book.showBookInfo();
 		}
@@ -45,7 +52,10 @@ public class ObjectCopy {
 		copyLibrary[3] = new Book("나목4","박완서");
 		copyLibrary[4] = new Book("나목5","박완서");
 			
-		
+		System.out.println("========새로운 copy library========");
+		for(Book book:copyLibrary) {
+			book.showBookInfo();
+		}
 
 	}
 
