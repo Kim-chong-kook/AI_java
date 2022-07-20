@@ -81,9 +81,9 @@ class VIPCustomer extends Customer{
 	}
 	*/
 	
-	public VIPCustomer(int customerID, String customerGrade) {
-		super(customerID, customerGrade);
-		customerGrade = "VIP";
+	public VIPCustomer(int customerID, String customerName) { // String customerGrade를 customerName으로 정상화함.
+		super(customerID, customerName);
+		customerGrade = "VIP"; // customerName이 정상화되어 customerGrade에 이름이 들어가지 않게 했고, Grade도 this를 넣을 필요없고 VIP로 나왔다.
 		bonusRatio = 0.05;
 		salesRatio = 0.1;
 		System.out.println("VIPCustomer(int, String) 생성자 호출");
@@ -110,7 +110,7 @@ public class CustomerTest {  ////////////////////////// 이것도 하나의 클�
 		System.out.println(customerLee.showCustomerInfo());
 			
 			
-		VIPCustomer customerKim = new VIPCustomer(10020, "김유신");
+		VIPCustomer customerKim = new VIPCustomer(10020, "김유신"); // 상속받은 것부터 실행.
 		//customerKim.setCustomerName("김유신");
 		//customerKim.setCustomerID(10020);
 		customerKim.bonusPoint = 10000;
