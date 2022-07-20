@@ -2,7 +2,7 @@ package kr.co.tj;
 
 import java.util.ArrayList; // 컨트롤 쉬프트 O
 
-public class ArrayListTest {
+public class ArrayListTest_자유로운Array입력 {
 
 	public static void main(String[] args) {
 		
@@ -39,7 +39,7 @@ public class ArrayListTest {
 		//=============================================================
 		// 타입 미설정하면, 자유로운 배열입력 ------매우 좋은 기능.
 		ArrayList array2 = new ArrayList(); 
-		array2.add("A");
+		array2.add("A"); // 자유로운 입력
 		array2.add(1.5);
 		array2.add(1);
 		array2.add(true);

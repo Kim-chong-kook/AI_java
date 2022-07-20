@@ -1,4 +1,4 @@
-package kr.co.tj1;
+package kr.co.tj;
 
 import java.util.ArrayList;
 import java.util.HashMap;

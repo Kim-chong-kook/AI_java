@@ -1,0 +1,26 @@
+★★★★ 중요한 : 컬렉션/Map★★★★
+https://gangnam-americano.tistory.com/41
+==========================================================
+1.스타유엠엘
+
+2.플로차트 구현앱 & DB연동
+https://www.diagrams.net/
+drawio.exe
+
+@문제풀이 : 능력향상
+https://codeup.kr/
+https://codeup.kr/problemset.php?search=koistudy.net
+아이디어 연습 https://codeup.kr/tools/memo.html
+
+@백준
+https://www.acmicpc.net/
+https://www.acmicpc.net/lectures
+https://code.plus/
+
+@프로그래머스
+https://programmers.co.kr/
+=======================================
+
+// 상속을 위해서는 부모클래스에서 상속해줄 접근지정자로써, protected를 쓴다.
+// 생성자가 매개변수가 있는 것은 강제로 super;로 치고 올라가서 초기화를 받아와야 한다.
+// 이때는 생성자 마다, super; 모두 써줘야 하고, 필요한 변수의 값들을 설정하도록 넣어줘야함.
