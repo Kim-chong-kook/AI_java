@@ -53,22 +53,22 @@ public class AnimalTest {
 		Animal eAnimal = (Animal) new Eagle();
 		
 		AnimalTest test = new AnimalTest();
-		test.moveAnimal(hAnimal);
+		test.moveAnimal(hAnimal); //for를 통하지 않고 동물 각각의 class를 호출
 		test.moveAnimal(tAnimal);
 		test.moveAnimal(eAnimal);
 		
 		ArrayList<Animal> animalList = new ArrayList<Animal>();
-		animalList.add(hAnimal);
+		animalList.add(hAnimal); // 배열에 각각의 동물을 넣고 for로 동물 각각의 class를 호출
 		animalList.add(tAnimal);
 		animalList.add(eAnimal);
 		
 		for(Animal animal : animalList) {
-			animal.move();
+			animal.move(); // 동물 각각의 class를 호출
 		}
 	}	
 	
 	public void moveAnimal(Animal animal) {
-		animal.move();
+		animal.move(); // 동물 각각의 class를 호출
 		
 	}
 }
