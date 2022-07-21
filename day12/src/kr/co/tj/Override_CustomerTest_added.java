@@ -1,4 +1,4 @@
-package kr.co.tj5;
+package kr.co.tj;
 
 class Customer {
 	protected int customerID; // protected는 상속매개
@@ -69,7 +69,9 @@ class Customer {
 	}
 }
 
-class VIPCustomer extends Customer{ // 상속받았기 때문에 하위 메소드에서는 super(...)를 자동호출함.(상위 메서드, 멤버변수에 접근)
+class VIPCustomer extends Customer{ 
+	// ★ extends = 다운 캐스팅 // 상속받았기 때문에 하위 메소드에서는 super(...)를 자동호출함.
+	// (상위 메서드, 멤버변수에 접근)
 	private int agentID; // 전문상담사
 	double salesRatio; // 할인율
 	
@@ -93,7 +95,7 @@ class VIPCustomer extends Customer{ // 상속받았기 때문에 하위 메소�
 		return agentID;
 	}
 	
-	@Override
+	@Override //  ★ ★ ★ 이것이 상속함(인스턴스들)의 다형성 갖는 부분이다. // 오버로딩은 단일 객체에서만 쓰는 방식이다.
 	public int calcPrice(int price) {
 		bonusPoint += price * bonusRatio;
 		return price - (int)(price * salesRatio);
@@ -106,7 +108,7 @@ class VIPCustomer extends Customer{ // 상속받았기 때문에 하위 메소�
 	}
 }
 
-public class CustomerTest {  ////////////////////////// 이것도 하나의 클래스 이므로 ()불필요함.
+public class Override_CustomerTest_added {  ////////////////////////// 이것도 하나의 클래스 이므로 ()불필요함.
 	public static void main(String[] args) { ////////// 메소드만 () 필요함.
 		//Customer customerLee = new Customer(); // 매개변수 없는 것은 만들지 않았기에 에러난다.
 		
@@ -128,16 +130,21 @@ public class CustomerTest {  ////////////////////////// 이것도 하나의 클�
 		}else if(customerGrade == "VIP") {
 		}*/
 		
-		int priceLee = customerLee.calcPrice(10000); // 1만원 매수
-		int priceKim = customerKim.calcPrice(10000); // 1만원 매수
+		int priceLee = customerLee.calcPrice(10000); // 가격 1만원 구매
+		int priceKim = customerKim.calcPrice(10000); // 가격 1만원 구매
 		
 		System.out.println();
 		System.out.println(customerLee.showCustomerInfo() + " 지불금액은 " + priceLee + "원 입니다.");
 		System.out.println(customerKim.showCustomerInfo() + " 지불금액은 " + priceKim + "원 입니다.");		
-		Customer customerNo = new VIPCustomer(10030, "나몰라");
+		
+		Customer customerNo = new VIPCustomer(10030, "나몰라"); // ★ 업캐스팅
+		// 묵시적 무명자 생성해서 넣음 : Anonymouse anonymoune = new VIPCustomer();
+		// 묵시적 형변환 Customer customerNo = (Customer) new VIPCustomer(10030, "나몰라");
 		customerNo.bonusPoint = 10000;
-		int priceNo = customerNo.calcPrice(10000);
+		int priceNo = customerNo.calcPrice(10000); // 부모로 up casting되었지만, 자식에서 ★ Override된 것이 우선적 실행된다(부모것은 virtual로 가려진다).
 		System.out.println(customerNo.showCustomerInfo() + " 지불금액은 " + priceNo  + "원 입니다.");
+		
+		// ■ customerNo.에서 확인하면, 다형성으로써, 자식에 부모의 메소드를 Override한 부분은 부모클래스로 표식되나 virtual로 가려지고, 실제는 자신(자식)의 부분이 우선 실행된다. 
 
 	}
 
