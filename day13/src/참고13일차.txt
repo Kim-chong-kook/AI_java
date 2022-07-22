@@ -1,0 +1,56 @@
+2022.7.22
+AI과정 java 13일차.
+
+<< 접근지정자 주의 >>
+protected(상속때 허용된 접근자)는 같은 package 내에서는 문제없으나, 
+package가 다른곳에서 import 했을때, 접근되지 않는다.
+
+<< getter/setter >>
+VO : value of Object 라고 말한다.
+DTO : data Trans 라고 말하기도 한다.
+
+=====================================================================================
+업개스팅되면 자식 변수,메소드는 못쓴다. 다만, override 부분만 쓴다.
+업케스팅 후 instanceOf의 질문은 안전장치. 좌 부모/우 자식. 형태로 if 확인하고 down casting 하는것은
+★ Viechl내의 Car 와 Truck을 구분하고 모델 종류를 구분하기 위함.
+ 
+// 아래 오버라이드의 목적 : 생성된 객체들의 스택 메모리 주소가 다르므로 
+	@Override // 소스/오버라이드/Implement Methods
+	public boolean equals(Object obj) { // second car를 업캐스팅 : equals 메소드 재정의 (슈퍼 Object 속의 것도아니고 문자열 비교도 아닌 재정의)
+		if(obj instanceof Car) {  // 상속관계의 부모냐 묻는 문장.
+			Car car = (Car)obj;   // 업캐스팅된 obj(second car)를 자식으로 다운캐스팅
+			return model.equals(car.model); // model=first car, car.model=second car
+			// ★★ 모델의 주소를 비교한다.
+		}else {
+		
+		return false;
+		}
+	}
+================================================================================
+
+프로그램은 : 응집도는 높고 결합도는 낮게 한다.	
+==============================================
+★★★ down casting은 instanceof 속에 강제형변환 해줘야 한다.
+@@ 추상 클래스 속에 추상메소드가 없다. ==> 상속의 용도로만 사용함.
+@@ final 키워드가 변수에 쓰이면 1.상수이고,메서드에 쓰이면 2.재정의를 못하게 되고 3. extends로 상속되지 않는다.
+즉, 수학 상수, 함수,상수만 final로 사용한다. 
+그외에는 추상클래스를 많이 쓴다.
+==============================================
+
+++++++++++++++++++++++++++++++
+
+하루에 1번 블로그에 피드백 포스팅
+
+++++++++++++++++++++++++++++++
+<< 자바, 참고 동영상 >>
+https://www.youtube.com/watch?v=PCXlgnYekBg
+
+https://www.youtube.com/watch?v=IEH3YA2Nn4Q
+
+https://www.youtube.com/watch?v=JgRCaVwkPE8
+
+https://www.youtube.com/watch?v=6SvUZqbU37E
+
+https://www.youtube.com/watch?v=vZRmCbl871I
+
+https://www.youtube.com/watch?v=UzaGOXKVhwU
