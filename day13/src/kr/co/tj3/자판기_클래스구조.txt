@@ -1,0 +1,6 @@
+class Pay {//돈을 나타내는 클래스입니다.
+class Admin {//관리자 클래스시작
+class Drink{//자판기 음료클래스시작
+class Coffee extends Drink{//음료클래스에서 커피클래스로 상속받는다.
+class Soda extends Drink{//음료클래스에서 소다클래스로 상속받는다.
+class Ion extends Drink{//음료클래스에서 이온클래스로 상속받는다.
