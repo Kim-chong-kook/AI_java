@@ -30,7 +30,8 @@ class Customer {
 	public Customer(int customerID, String customerName, int agentID ) { //  ★ ★ ★ 상속되지 않고 제외된다.
 		this.customerID = customerID;
 		this.customerName = customerName;
-		this.agentID = agentID;///////////////////★★★★★★★★★★★★★★★★★★★★
+		this.agentID = agentID; 
+	} ///////////////////★★★★★★★★★★★★★★★★★★★★
 	
 	public int calcPrice(int price) {
 		bonusPoint += price * bonusRatio;
@@ -91,19 +92,15 @@ class VIPCustomer extends Customer{
 	}
 	*/
 	
-	public VIPCustomer(int customerID, String customerName) { // String customerGrade를 customerName으로 정상화함.
+	public VIPCustomer(int customerID, String customerName, int agentID) { 
 		super(customerID, customerName); // 
 		customerGrade = "VIP"; // customerName이 정상화되어 customerGrade에 이름이 들어가지 않게 했고, Grade도 this를 넣을 필요없고 VIP로 나왔다.
 		bonusRatio = 0.05;
 		salesRatio = 0.1;
 		System.out.println("VIPCustomer(int, String) 생성자 호출");
+		this.agentID = agentID;
 	}
 	
-	public VIPCustomer(int i, String s, int j) {
-		super(i,s,j);
-		
-	}
-
 	public int getAgentID() {
 		return agentID;
 	}

@@ -48,11 +48,11 @@ public class AnimalTest {
 
 	public static void main(String[] args) {
 
-		Animal hAnimal = (Animal) new Human(); // Animal로 up casting이 일어난다.
+		Animal hAnimal = (Animal) new Human(); // Animal로 up casting이 일어난다. // 이유형은 Animal이지만, Human의 Override만 실행한다.
 		Animal tAnimal = (Animal) new Tiger();
 		Animal eAnimal = (Animal) new Eagle();
 		
-		AnimalTest test = new AnimalTest();
+		AnimalTest test = new AnimalTest(); // ★ 클레스마다 인스턴스를 생성할 수 있다.
 		test.moveAnimal(hAnimal); //for를 통하지 않고 동물 각각의 class를 호출
 		test.moveAnimal(tAnimal);
 		test.moveAnimal(eAnimal);
