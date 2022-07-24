@@ -1,4 +1,4 @@
-package kr.co.tj1;
+package kr.co.tj4;
 
 import java.util.Scanner;
 
@@ -115,6 +115,7 @@ class Drink {
 }
 
 class Coffee extends Drink {
+	
 	public Coffee(String name, int cnt, int price) {
 		super(name, cnt, price);
 	}
@@ -158,7 +159,8 @@ class Ion extends Drink {
 	}
 }
 
-public class Test01 {
+//=========================================================
+public class 자판기_코드파일 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Admin ad = new Admin(1234);// 어드민 비밀번호

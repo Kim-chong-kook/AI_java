@@ -11,6 +11,14 @@ package kr.co.tj3;
 
 import java.util.Scanner;
 
+import kr.co.tj4.Admin;
+import kr.co.tj4.Coffee;
+import kr.co.tj4.Drink;
+import kr.co.tj4.Ion;
+import kr.co.tj4.Juice;
+import kr.co.tj4.Pay;
+import kr.co.tj4.Soda;
+
 public class SelfSaler {
 
 	/**

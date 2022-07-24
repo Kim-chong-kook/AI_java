@@ -1,5 +1,7 @@
 package kr.co.tj3;
 
+import kr.co.tj4.Drink;
+
 public class Soda extends Drink {
 
 	public Soda(String name, int stock, int price) {
