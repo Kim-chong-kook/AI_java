@@ -7,7 +7,7 @@ class Pay {
 	int money;
 
 //생성자
-	public Pay(int money) {
+	public Pay(int money) { // ★private가 맞음...
 		this.money = money;
 	}
 
@@ -41,11 +41,15 @@ class Admin {
 	public boolean checkPW(int pw) {
 //관리자 번호 확인 메서드
 //입력값과 관리자 번호가 같다면 true를 리턴한다
+		boolean result = false; // ★리턴은 컴파일러 부담되므로 1번만 써라
 		if (this.pw == pw) {
-			return true;
+			result = true;
+			//return true;
 		} else {
-			return false;
+			result = false;
+			//return false;
 		}
+		return result; // ★리턴은 컴파일러 부담되므로 1번만 써라
 	}
 
 	public void plusCnt(Drink drink, int cnt) {
@@ -56,10 +60,10 @@ class Admin {
 }
 
 class Drink {
-	private String name;// 음료수 이름
+	private String name;// 음료수 이름 // ★상속불가
 	private int cnt;// 음료 재고
-	private static int pkNum = 1001;// PK저장값
-	private int pk;// 고유 PK값
+	private static int pkNum = 1001;// PK저장값 // ★ 중복방지
+	private int pk;// 고유 PK값 // ★ 중복방지
 	private int price; // 음료수 값
 	public Drink(String name, int cnt, int price) {
 		this.name = name;
@@ -117,7 +121,7 @@ class Drink {
 class Coffee extends Drink {
 	
 	public Coffee(String name, int cnt, int price) {
-		super(name, cnt, price);
+		super(name, cnt, price); // ★상속안되어서 super로 처리.
 	}
 
 	@Override
@@ -128,7 +132,7 @@ class Coffee extends Drink {
 
 class Juice extends Drink {
 	public Juice(String name, int cnt, int price) {
-		super(name, cnt, price);
+		super(name, cnt, price); // ★상속안되어서 super로 처리.
 	}
 
 	@Override
@@ -139,7 +143,7 @@ class Juice extends Drink {
 
 class Soda extends Drink {
 	public Soda(String name, int cnt, int price) {
-		super(name, cnt, price);
+		super(name, cnt, price); // ★상속안되어서 super로 처리.
 	}
 
 	@Override
@@ -150,7 +154,7 @@ class Soda extends Drink {
 
 class Ion extends Drink {
 	public Ion(String name, int cnt, int price) {
-		super(name, cnt, price);
+		super(name, cnt, price); // ★상속안되어서 super로 처리.
 	}
 
 	@Override
@@ -158,36 +162,35 @@ class Ion extends Drink {
 		return getName() + " 수량:" + getCnt() + " 가격:" + getPrice() + "원";
 	}
 }
-
 //=========================================================
 public class 자판기_코드파일 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Admin ad = new Admin(1234);// 어드민 비밀번호
-		Drink[] drink = new Drink[7];
-		drink[0] = new Coffee("아메리카노", 10, 1500);
-		drink[1] = new Coffee("라떼 ", 10, 1600);
-		drink[2] = new Ion("파워에이드", 10, 2000);
-		drink[3] = new Juice("오렌지주스", 10, 1400);
-		drink[4] = new Juice("포도주스 ", 10, 1400);
-		drink[5] = new Soda("콜라 ", 10, 2200);
-		drink[6] = new Soda("사이다 ", 10, 2000);
+		Admin ad = new Admin(1234);// 어드민 비밀번호 ==> 어드민 생성자로 이동
+		Drink[] drink = new Drink[7]; // 스택에 올리기
+		drink[0] = new Coffee("아메리카노", 10, 1500); // 힙에 올리기 ==> 생성자 함수로 이동
+		drink[1] = new Coffee("라떼 ", 10, 1600); // 힙에 올리기
+		drink[2] = new Ion("파워에이드", 10, 2000); // 힙에 올리기
+		drink[3] = new Juice("오렌지주스", 10, 1400); // 힙에 올리기
+		drink[4] = new Juice("포도주스 ", 10, 1400); // 힙에 올리기
+		drink[5] = new Soda("콜라 ", 10, 2200); // 힙에 올리기
+		drink[6] = new Soda("사이다 ", 10, 2000); // 힙에 올리기
 		while (true) {
 			System.out.println("1.소비자 2.관리자 3.종료");
 			int a = sc.nextInt();
 			if (a == 1) { // 소비자모드
 				System.out.println("돈을 얼마나 넣으시겠습니까?");
-				Pay pay = new Pay(sc.nextInt());
-				System.out.println(pay.money + "원을 넣으셨습니다.");
+				Pay pay = new Pay(sc.nextInt()); // ★ 힙에 올리기 / 생성자 실행
+				System.out.println(pay.money + "원을 넣으셨습니다."); // ★ money가 비공개면 get방식 또는 상속?
 				System.out.println();
 				while (true) {
 					System.out.println("상품을 선택해주세요.");
-					for (int i = 1; i - 1 < drink.length; i++) {
-						System.out.println(i + "." + drink[i - 1]);
+					for (int i = 1; i - 1 < drink.length; i++) { // ★ 0에서 ~=> drink 배열방의 길이 만큼
+						System.out.println(i + "." + drink[i - 1].toString()); // ★★ toString 생략가능
 					}
-					int act = sc.nextInt() - 1;
+					int act = sc.nextInt() - 1; // ★ 음료메뉴 배열 : 1~7 => 0~6
 					int orders;
-					if (act < 0 || act >= drink.length) {
+					if (act < 0 || act >= drink.length) { // ★ 유효성검사
 						System.out.println("잘못된입력입니다.");
 						System.out.println();
 						continue;
@@ -205,7 +208,7 @@ public class 자판기_코드파일 {
 					pay.pay(drink[act], orders);
 					System.out.println("주문을 계속하시겠습니까? Y/N");
 					String YN = sc.next();
-					YN = YN.toUpperCase();
+					YN = YN.toUpperCase(); // ★문자열 대문자 만드는 메소드
 					if (YN.equals("N")) {
 						break;
 					}
@@ -219,8 +222,8 @@ public class 자판기_코드파일 {
 							System.out.println("1.물품목록 2.물품수량추가 3.관리자모드 종료");
 							int gmact = sc.nextInt();
 							if (gmact == 1) {
-								for (int i = 1; i - 1 < drink.length; i++) {
-									System.out.println(i + "." + drink[i - 1]);
+								for (int i = 1; i - 1 < drink.length; i++) { // ★배열방의 물품 목록
+									System.out.println(i + "." + drink[i - 1]); // ★ toString 생략됨
 								}
 							} else if (gmact == 2) {
 								while (true) {
@@ -228,9 +231,9 @@ public class 자판기_코드파일 {
 										System.out.println(i + "." + drink[i - 1]);
 									}
 									System.out.println("추가할 물품은 선택해주세요.");
-									int act = sc.nextInt() - 1;
+									int act = sc.nextInt() - 1; // ★ 입력값과 배열방 일치
 									int gmorders;
-									if (act < 0 || act > drink.length) {
+									if (act < 0 || act > drink.length) { // ★ 유효성 검사
 										System.out.println("잘못된입력입니다.");
 										System.out.println();
 										continue;
@@ -238,14 +241,14 @@ public class 자판기_코드파일 {
 									System.out.println(drink[act].getName() + "을 선택하셨습니다.");
 									while (true) {
 										System.out.println("수량을 입력해주세요");
-										gmorders = sc.nextInt();
+										gmorders = sc.nextInt(); // ★ 추가할 수량 유효성 검사
 										if (gmorders <= 0) {
 											System.out.println("잘못된입력입니다.");
 											continue;
 										}
 										break;
 									}
-									ad.plusCnt(drink[act], gmorders);
+									ad.plusCnt(drink[act], gmorders); // ★ 음료[물품번호], 추가량
 									System.out.println(drink[act].getName() + "의 수량을 " + gmorders + "개 추가하였습니다.");
 									break;
 								}
