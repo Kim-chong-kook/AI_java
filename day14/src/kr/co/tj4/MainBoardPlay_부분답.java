@@ -105,7 +105,7 @@ class AdvancedLevel extends PlayerLevel{
 	}
 
 }
-
+//클라이언트 출발지=========================================
 public class MainBoardPlay_부분답 {
 
 	public static void main(String[] args) {
