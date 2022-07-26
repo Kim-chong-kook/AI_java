@@ -10,3 +10,39 @@
 String의 class는: 생성되면 계속 새로운 문자열이 생성됨.
 (스택 메모리 낭비 가능, 힙에 새로운 주소 생성, 동일한 값을 사용. 상수pool 등이 그렇다. 연산에 들어가면 계속 생성.)
 StringBuilder, StringBuffer : 쓰레기 메모리는 회수된다. // 회사에서 실무로 동기화되는 StringBuffer를 사용.
+
+
+<<@@@@@ DBMS 장비 MySql 설치 @@@@@>>
+
+1. https://dev.mysql.com/downloads/installer/
+클릭 : Windows (x86, 32-bit), MSI Installer
+아래 작은 글씨 클릭 : No thanks, just start my download.
+설치후, MySQl Connections +, 비번설정후. DB 생성.
+사용자 : kim
+
+<<@@@@@ DBMS 장비 OracleXEUniv 설치 @@@@@>>
+2. OracleXEUniv
+sqlplus
+사용자 system / 비번
+create user tj identified by dkdlxl;  (아이티) 사용자 생성
+grant connect, resource to tj; // 권한 부여
+
+jar파일 ojdbc6.jar 찾아 넣어주기
+jdbc:oracle:thin:@127.0.0.1:1521:XE
+사용자 tj
+비번 1234
+셋팅완료
+좌측 XE ---Schemas
+
+===========================================================
+<<MySQL>> 명령
+DB생성 > 연결
+use kim;
+CREATE TABLE kim(
+no int,
+addr varchar(1000)
+select no,addr from kim01;
+select no,addr from kim;
+insert into kim(no,addr) values(1,'서울특별시 구로구'); //// (필드 삽입)
+select no,addr from kim; //// (테이블 접근)
+select no,addr from kim01; //// (테이블 접근)
